@@ -1,2 +1,2 @@
 # Gra
-Endless Game by Kamil and Dawid ess
+Endless Game by Kamil and Dawid es
