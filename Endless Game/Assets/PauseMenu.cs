@@ -45,13 +45,14 @@ public class PauseMenu : MonoBehaviour
 
     public void LoadMenu()
     {
-        Debug.Log("Loading menu...");
+        
         SceneManager.LoadScene("Menu");
     }
 
     public void QuitGame()
     {
-        Debug.Log("Quitting game...");
+        
         Application.Quit();
+        UnityEditor.EditorApplication.isPlaying = false;
     }
 }
