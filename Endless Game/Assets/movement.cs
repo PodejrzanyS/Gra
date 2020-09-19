@@ -100,16 +100,16 @@ public class movement : MonoBehaviour
         rbBody.velocity = new Vector2(ruchPoziomy * 5, rbBody.velocity.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins<10)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins<5)
         {
             anim.SetTrigger("takeOf");
             rbBody.AddForce(new Vector2(0f, silaSkoku));
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded  && coins >=10)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded  && coins >=5)
         {
-
+            rbBody.velocity = new Vector2(rbBody.velocity.x, 0);
             rbBody.AddRelativeForce(new Vector2(0, silaSkoku));
             candoublejump = true;
             jumpCount++;
@@ -120,7 +120,7 @@ public class movement : MonoBehaviour
         {
             if (candoublejump == true && Input.GetKeyDown(KeyCode.Space))
             {
-
+                rbBody.velocity = new Vector2(rbBody.velocity.x, 0);
                 rbBody.AddRelativeForce(new Vector2(0, silaSkoku));
                 candoublejump = false;
                 jumpCount = 1;

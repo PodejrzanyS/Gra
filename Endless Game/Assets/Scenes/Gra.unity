@@ -1273,7 +1273,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 10 coins = doublejump
+  m_Text: 5 coins = doublejump
 --- !u!222 &770661252
 CanvasRenderer:
   m_ObjectHideFlags: 0
