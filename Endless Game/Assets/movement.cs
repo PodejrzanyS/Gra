@@ -25,12 +25,8 @@ public class movement : MonoBehaviour
     private Animator anim;
     public int jumpCount;
     private bool doubleJump;
-
-
-
-
-
-
+    int tak = 0;
+    SpriteRenderer sr;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -44,21 +40,25 @@ public class movement : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             playerTransform.position = spawnPosition.position;
-            
-                Scene thisScene = SceneManager.GetActiveScene();
-               SceneManager.LoadScene(thisScene.name);
-           
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+
+        }
+        if (collision.tag == "SuperJump")
+        {
+            Destroy(collision.gameObject);
+            silaSkoku = 525;
+            sr.color = Color.cyan;
+            StartCoroutine(ResetPower());
+        }
+        if (collision.tag == "SuperSpeed")
+        {
+            sr.color = Color.red;
+            tak = 1;
+            Destroy(collision.gameObject);
         }
 
     }
-
-
-   
-
-
-
-
-
 
     void Flip()
     {
@@ -71,12 +71,14 @@ public class movement : MonoBehaviour
     {
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        sr = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
     {
         grounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
     }
+    
 
     // Update is called once per frame
     void Update()
@@ -94,7 +96,6 @@ public class movement : MonoBehaviour
         }
 
         float ruchPoziomy = Input.GetAxis("Horizontal");
-
         float ruchPionowy = Input.GetAxis("Vertical");
 
         rbBody.velocity = new Vector2(ruchPoziomy * 5, rbBody.velocity.y);
@@ -154,16 +155,27 @@ public class movement : MonoBehaviour
 
         if (playerTransform.position.y < -30)
         {
-            playerTransform.position = spawnPosition.position;
-            
+             playerTransform.position = spawnPosition.position;
              Scene thisScene = SceneManager.GetActiveScene();
              SceneManager.LoadScene(thisScene.name);
             
 
         }
 
+        if(tak==1)
+        {
+            rbBody.velocity = new Vector2(ruchPoziomy * 10, rbBody.velocity.y);
+            StartCoroutine(ResetPower());
+        }
+       
 
-
+    }
+    private IEnumerator ResetPower()
+    {
+        yield return new WaitForSeconds(10);
+        silaSkoku = 350;
+        tak = 0;
+        sr.color = Color.white;
     }
 
 
