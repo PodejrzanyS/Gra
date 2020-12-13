@@ -121,6 +121,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &271640
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707047, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707049, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: fallSpeed
+      value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274524094492707050, guid: a35ba189fba37c549b8247548bf34018,
+        type: 3}
+      propertyPath: m_Name
+      value: axe
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a35ba189fba37c549b8247548bf34018, type: 3}
 --- !u!1 &52195394
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,7 +1284,7 @@ GameObject:
   - component: {fileID: 674798612}
   - component: {fileID: 674798611}
   m_Layer: 0
-  m_Name: model-2-1-2x
+  m_Name: jump
   m_TagString: SuperJump
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2165,7 +2239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 66536364}
   damage: 40
-  bulletPrefab: {fileID: 890023417230606584, guid: 217e8c1865e1e8644b52cb45c94a8e4a,
+  bulletPrefab: {fileID: 1274524094492707050, guid: a35ba189fba37c549b8247548bf34018,
     type: 3}
 --- !u!114 &1549738429
 MonoBehaviour:
@@ -2330,7 +2404,7 @@ GameObject:
   - component: {fileID: 1708492465}
   - component: {fileID: 1708492467}
   m_Layer: 0
-  m_Name: 1-2x
+  m_Name: speed
   m_TagString: SuperSpeed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
