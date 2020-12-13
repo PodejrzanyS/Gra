@@ -57,6 +57,13 @@ public class movement : MonoBehaviour
             tak = 1;
             Destroy(collision.gameObject);
         }
+        if (collision.tag == "follow")
+        {
+            Destroy(collision.gameObject);
+            playerTransform.position = spawnPosition.position;
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+        }
 
     }
 

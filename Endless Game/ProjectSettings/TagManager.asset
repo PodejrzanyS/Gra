@@ -9,6 +9,7 @@ TagManager:
   - yes
   - SuperJump
   - SuperSpeed
+  - follow
   layers:
   - Default
   - TransparentFX

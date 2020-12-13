@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7904494692619846151}
   - component: {fileID: 5329994317716824273}
   - component: {fileID: 50925967932599232}
-  - component: {fileID: 114442362048920588}
+  - component: {fileID: 4683661399400622620}
   - component: {fileID: 61332099992335294}
   m_Layer: 0
   m_Name: pixil-layer-Background
@@ -105,7 +105,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &114442362048920588
+--- !u!114 &4683661399400622620
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,16 +114,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 890023417230606584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 535a750c8c459b049854bff35ec02b86, type: 3}
+  m_Script: {fileID: 11500000, guid: 60e12a051e8e8f0458732154b3e2bd42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
-  damage: 40
-  impactEffect: {fileID: 0}
-  rb: {fileID: 50925967932599232}
-  czekaj: 0.5
-  fallSpeed: 10
-  czekajd: 0.6
+  player: {fileID: 0}
+  moveSpeed: 5
 --- !u!61 &61332099992335294
 BoxCollider2D:
   m_ObjectHideFlags: 0
