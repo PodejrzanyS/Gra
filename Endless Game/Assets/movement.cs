@@ -47,7 +47,7 @@ public class movement : MonoBehaviour
         if (collision.tag == "SuperJump")
         {
             Destroy(collision.gameObject);
-            silaSkoku = 525;
+            silaSkoku = 625;
             sr.color = Color.cyan;
             StartCoroutine(ResetPower());
         }
@@ -173,7 +173,7 @@ public class movement : MonoBehaviour
     private IEnumerator ResetPower()
     {
         yield return new WaitForSeconds(10);
-        silaSkoku = 350;
+        silaSkoku = 450;
         tak = 0;
         sr.color = Color.white;
     }
