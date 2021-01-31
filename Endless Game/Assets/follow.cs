@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class follow : MonoBehaviour
 {
     public Transform player;
-    public float moveSpeed = 5f;
+    public int moveSpeed;
     private Rigidbody2D rb;
     private Vector2 movement;
 
@@ -23,6 +23,7 @@ public class follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moveSpeed = 1 + player.GetComponent<movement>().coins;
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         rb.rotation = angle;

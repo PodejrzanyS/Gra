@@ -20,21 +20,27 @@ public class movement : MonoBehaviour
     public LayerMask whatIsGround;
     public bool grounded;
     private bool candoublejump;
-    public int coins = 0;
+    public int coins =0;
     public Text coinText;
     private Animator anim;
     public int jumpCount;
     private bool doubleJump;
     int tak = 0;
     SpriteRenderer sr;
-
+    public Text score;
+    public Text highScore;
+    int highscore;
+    int currency;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "collectable")
         {
             Destroy(collision.gameObject);
             coins += 1;
-            coinText.text = coins.ToString();
+            currency++;
+            PlayerPrefs.SetInt("currency", currency);
+            PlayerPrefs.Save();
+            coinText.text = currency.ToString();
         }
 
         if (collision.tag == "Enemy")
@@ -79,6 +85,9 @@ public class movement : MonoBehaviour
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        highscore = PlayerPrefs.GetInt("highscore");
+        currency = PlayerPrefs.GetInt("currency");
+        coinText.text = currency.ToString();
     }
 
     private void FixedUpdate()
@@ -90,7 +99,15 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (highscore <= coins)
+        {
+            highscore = coins;
+            PlayerPrefs.SetInt("highscore", highscore);
+            PlayerPrefs.Save();
+        }
+        highScore.text = "Highscore: " + highscore;
+        score.text = "Score: " + coins;
+        
 
         if (grounded)
         {
@@ -162,7 +179,7 @@ public class movement : MonoBehaviour
 
         if (playerTransform.position.y < -30)
         {
-             playerTransform.position = spawnPosition.position;
+            playerTransform.position = spawnPosition.position;
              Scene thisScene = SceneManager.GetActiveScene();
              SceneManager.LoadScene(thisScene.name);
             
