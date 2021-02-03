@@ -55,13 +55,15 @@ public class movement : MonoBehaviour
             Destroy(collision.gameObject);
             silaSkoku = 625;
             sr.color = Color.cyan;
-            StartCoroutine(ResetPower());
+            StartCoroutine(ResetPower1());
         }
         if (collision.tag == "SuperSpeed")
         {
+            Destroy(collision.gameObject);
             sr.color = Color.red;
             tak = 1;
-            Destroy(collision.gameObject);
+           
+            StartCoroutine(ResetPower());
         }
         if (collision.tag == "follow")
         {
@@ -189,7 +191,7 @@ public class movement : MonoBehaviour
         if(tak==1)
         {
             rbBody.velocity = new Vector2(ruchPoziomy * 10, rbBody.velocity.y);
-            StartCoroutine(ResetPower());
+           
         }
        
 
@@ -197,9 +199,20 @@ public class movement : MonoBehaviour
     private IEnumerator ResetPower()
     {
         yield return new WaitForSeconds(10);
-        silaSkoku = 450;
         tak = 0;
-        sr.color = Color.white;
+        if (silaSkoku == 450)
+        {
+            sr.color = Color.white;
+        }
+    }
+    private IEnumerator ResetPower1()
+    {
+        yield return new WaitForSeconds(10);
+        silaSkoku = 450;
+        if (tak == 0)
+        {
+            sr.color = Color.white;
+        }
     }
 
 
