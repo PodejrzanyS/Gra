@@ -10,6 +10,7 @@ TagManager:
   - SuperJump
   - SuperSpeed
   - follow
+  - shoot
   layers:
   - Default
   - TransparentFX

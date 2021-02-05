@@ -20,7 +20,7 @@ public class movement : MonoBehaviour
     public LayerMask whatIsGround;
     public bool grounded;
     private bool candoublejump;
-    public int coins =0;
+    public int coins = 0;
     public Text coinText;
     private Animator anim;
     public int jumpCount;
@@ -31,6 +31,7 @@ public class movement : MonoBehaviour
     public Text highScore;
     int highscore;
     int currency;
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "collectable")
