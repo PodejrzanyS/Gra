@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pocisk : MonoBehaviour
 {
-    float moveSpeed = 7f;
+    float moveSpeed = 2f;
     Rigidbody2D rb;
 
     Player target;

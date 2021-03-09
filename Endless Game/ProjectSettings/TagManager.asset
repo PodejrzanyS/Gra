@@ -11,6 +11,7 @@ TagManager:
   - SuperSpeed
   - follow
   - shoot
+  - kulki
   layers:
   - Default
   - TransparentFX

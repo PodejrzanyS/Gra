@@ -52,6 +52,13 @@ public class movement : MonoBehaviour
             SceneManager.LoadScene(thisScene.name);
 
         }
+        if (collision.tag == "kulki")
+        {
+            playerTransform.position = spawnPosition.position;
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+
+        }
         if (collision.tag == "SuperJump")
         {
             Destroy(collision.gameObject);
