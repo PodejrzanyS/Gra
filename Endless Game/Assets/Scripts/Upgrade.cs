@@ -9,7 +9,7 @@ public class Upgrade : MonoBehaviour
 {
     int currency;
     int damage;
-    int speed;
+    public int speed;
     public Text coinsy;
     public Text damagetxt;
     public Text speedtxt;
