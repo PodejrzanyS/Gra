@@ -608,6 +608,11 @@ PrefabInstance:
       propertyPath: moveSpeed
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 5147141176432493035, guid: 217e8c1865e1e8644b52cb45c94a8e4a,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1549738431}
     - target: {fileID: 7904494692619846151, guid: 217e8c1865e1e8644b52cb45c94a8e4a,
         type: 3}
       propertyPath: m_LocalPosition.x

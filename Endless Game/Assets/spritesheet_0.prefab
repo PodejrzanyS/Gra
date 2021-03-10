@@ -117,7 +117,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pyk: {fileID: 0}
   shit: {fileID: 0}
-  bullet: {fileID: 1504035369083827387, guid: 1a87bf7988a753444aae8f08688b96dc, type: 3}
+  bullet: {fileID: 890023417230606584, guid: eab46dfd16e14c44fbfe96e023bb1470, type: 3}
   stats:
     maxHealth: 100
 --- !u!61 &6146148158883534884
