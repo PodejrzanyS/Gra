@@ -41,13 +41,17 @@ public class Bullet : MonoBehaviour
         if (collision.tag == "yes")
         {
             Destroy(collision.gameObject);
+            Destroy(gameObject);
 
         }
         if (collision.tag == "kulki")
         {
             Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+        // Destroy(gameObject);
+        
+        
 
 
 

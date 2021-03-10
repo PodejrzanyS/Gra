@@ -33,6 +33,13 @@ public class Upgrade : MonoBehaviour
     {
         damage = damage + 10;
         PlayerPrefs.SetInt("damage", damage);
+        currency = currency - 5;
+        PlayerPrefs.SetInt("currency", currency);
+    }
+    public void Minus_Damage()
+    {
+        damage = damage - 10;
+        PlayerPrefs.SetInt("damage", damage);
         currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
     }
@@ -40,6 +47,13 @@ public class Upgrade : MonoBehaviour
     public void Plus_Speed()
     {
         speed = speed + 1;
+        PlayerPrefs.SetInt("speed", speed);
+        currency = currency - 5;
+        PlayerPrefs.SetInt("currency", currency);
+    }
+    public void Minus_Speed()
+    {
+        speed = speed - 1;
         PlayerPrefs.SetInt("speed", speed);
         currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
