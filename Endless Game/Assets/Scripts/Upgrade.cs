@@ -9,16 +9,19 @@ public class Upgrade : MonoBehaviour
 {
     int currency;
     int damage;
-    public int speed;
+    int niszczenie;
+    int speed;
     public Text coinsy;
     public Text damagetxt;
     public Text speedtxt;
+    public Text niszczenietxt;
 
     void Start()
     {
         currency = PlayerPrefs.GetInt("currency");
         damage = PlayerPrefs.GetInt("damage",40);
         speed = PlayerPrefs.GetInt("speed",1);
+        niszczenie = PlayerPrefs.GetInt("niszczenie");
     }
     
     void Update()
@@ -26,6 +29,14 @@ public class Upgrade : MonoBehaviour
         coinsy.text = "Coinsy: " + currency;
         damagetxt.text = "Damage: " + damage;
         speedtxt.text = "Speed: " + speed;
+        if (niszczenie == 0)
+        {
+            niszczenietxt.text = "Niszczenie strzał: " + niszczenie;
+        }
+        else
+        {
+            niszczenietxt.text = "Upgrade wykorzystany";
+        }
 
     }
 
@@ -57,6 +68,27 @@ public class Upgrade : MonoBehaviour
         PlayerPrefs.SetInt("speed", speed);
         currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
+    }
+    public void Plus_Strzalki()
+    {
+        if (niszczenie == 0)
+        {
+            niszczenie = niszczenie + 1;
+            PlayerPrefs.SetInt("niszczenie", niszczenie);
+            currency = currency - 100;
+            PlayerPrefs.SetInt("currency", currency);
+        }
+       
+    }
+    public void Minus_Strzalki()
+    {
+        if (niszczenie == 1)
+        {
+            niszczenie = niszczenie - 1;
+            PlayerPrefs.SetInt("niszczenie", niszczenie);
+            currency = currency - 1;
+            PlayerPrefs.SetInt("currency", currency);
+        }
     }
 
 }
