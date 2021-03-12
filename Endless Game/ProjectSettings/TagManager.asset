@@ -12,6 +12,7 @@ TagManager:
   - follow
   - shoot
   - kulki
+  - Muzyka
   layers:
   - Default
   - TransparentFX
