@@ -50,8 +50,11 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
         }
         // Destroy(gameObject);
-        
-        
+        if (collision.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
+
 
 
 

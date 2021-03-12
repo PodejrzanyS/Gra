@@ -108,7 +108,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 0e141e3371de4a745962f5fa234ae937, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -217,7 +217,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 69273276e1c8ccb49b6732c3e9722868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -5070,6 +5070,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: xd
       objectReference: {fileID: 0}
+    - target: {fileID: 8117633515374087708, guid: f8f6587ecaa2ec84297647b4ed4e9cb2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8255572518150858834, guid: f8f6587ecaa2ec84297647b4ed4e9cb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5150,6 +5155,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 5773356454780730390}
     m_Modifications:
+    - target: {fileID: 2468877560927291410, guid: 29650ec8a9964de40bcf5f6d6ca58d8a,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2618513196696804567, guid: 29650ec8a9964de40bcf5f6d6ca58d8a,
         type: 3}
       propertyPath: pyk
@@ -5306,6 +5316,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.24852052
       objectReference: {fileID: 0}
+    - target: {fileID: 3407247975060672559, guid: 207b9605889fb734fa91a9ff3e3e8d8f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207b9605889fb734fa91a9ff3e3e8d8f, type: 3}
 --- !u!4 &80305500408199227 stripped
@@ -5390,6 +5405,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.24852052
+      objectReference: {fileID: 0}
+    - target: {fileID: 3407247975060672559, guid: 207b9605889fb734fa91a9ff3e3e8d8f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 207b9605889fb734fa91a9ff3e3e8d8f, type: 3}

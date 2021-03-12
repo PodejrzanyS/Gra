@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6146148158883534884}
   m_Layer: 0
   m_Name: spritesheet_0
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pyk: {fileID: 0}
-  shit: {fileID: 0}
+  shit: {fileID: 3407247975060672529, guid: 207b9605889fb734fa91a9ff3e3e8d8f, type: 3}
   bullet: {fileID: 890023417230606584, guid: eab46dfd16e14c44fbfe96e023bb1470, type: 3}
   stats:
     maxHealth: 100
