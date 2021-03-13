@@ -11,10 +11,12 @@ public class Upgrade : MonoBehaviour
     int damage;
     int niszczenie;
     int speed;
+    int maxHealth;
     public Text coinsy;
     public Text damagetxt;
     public Text speedtxt;
     public Text niszczenietxt;
+    public Text healthtxt;
 
     void Start()
     {
@@ -22,13 +24,16 @@ public class Upgrade : MonoBehaviour
         damage = PlayerPrefs.GetInt("damage",40);
         speed = PlayerPrefs.GetInt("speed",1);
         niszczenie = PlayerPrefs.GetInt("niszczenie");
+        maxHealth = PlayerPrefs.GetInt("maxHealth", 100);
     }
     
     void Update()
     {
+        healthtxt.text = "Health: " + maxHealth; 
         coinsy.text = "Coinsy: " + currency;
         damagetxt.text = "Damage: " + damage;
         speedtxt.text = "Speed: " + speed;
+        
         if (niszczenie == 0)
         {
             niszczenietxt.text = "Niszczenie strzał: " + niszczenie;
@@ -44,7 +49,7 @@ public class Upgrade : MonoBehaviour
     {
         damage = damage + 1;
         PlayerPrefs.SetInt("damage", damage);
-        currency = currency - 5;
+        currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
     }
     public void Minus_Damage()
@@ -59,7 +64,7 @@ public class Upgrade : MonoBehaviour
     {
         speed = speed + 1;
         PlayerPrefs.SetInt("speed", speed);
-        currency = currency - 5;
+        currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
     }
     public void Minus_Speed()
@@ -89,6 +94,20 @@ public class Upgrade : MonoBehaviour
             currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
         }
+    }
+    public void Plus_Health()
+    {
+        maxHealth = maxHealth + 1;
+        PlayerPrefs.SetInt("maxHealth", maxHealth);
+        currency = currency - 1;
+        PlayerPrefs.SetInt("currency", currency);
+    }
+    public void Minus_Health()
+    {
+        maxHealth = maxHealth - 1;
+        PlayerPrefs.SetInt("maxHealth", maxHealth);
+        currency = currency - 1;
+        PlayerPrefs.SetInt("currency", currency);
     }
 
 }

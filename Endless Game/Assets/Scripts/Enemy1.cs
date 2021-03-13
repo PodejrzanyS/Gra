@@ -13,8 +13,9 @@ public class Enemy1 : MonoBehaviour
     public GameObject bullet;
     float fireRate;
     float nextFire;
+    Animator myAnimator;
     [System.Serializable]
-
+  
 
 
 
@@ -39,11 +40,14 @@ public class Enemy1 : MonoBehaviour
 
     void Start()
     {
+        myAnimator = GetComponent<Animator>();
+        myAnimator.enabled = true;
+
         stats.Init();
         damage = PlayerPrefs.GetInt("damage", damage);
 
 
-        fireRate = 1f;
+        fireRate = 2f; // szybkosc strzelania
         nextFire = Time.time;
     }
 
@@ -69,7 +73,8 @@ public class Enemy1 : MonoBehaviour
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
-                Destroy(gameObject);
+                myAnimator.SetBool("IsDead", true);
+                Destroy(gameObject,2f);
                 pyk.Play();
             }
 

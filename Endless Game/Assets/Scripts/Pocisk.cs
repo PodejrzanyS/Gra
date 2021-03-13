@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pocisk : MonoBehaviour
 {
-    float moveSpeed = 2f;
+    float moveSpeed = 3f;
     Rigidbody2D rb;
 
     Player target;
@@ -16,7 +16,7 @@ public class Pocisk : MonoBehaviour
         target = GameObject.FindObjectOfType<Player>();
         moveDirection = (target.transform.position - transform.position).normalized * moveSpeed;
         rb.velocity = new Vector2(moveDirection.x, moveDirection.y);
-        Destroy(gameObject, 3f);
+        Destroy(gameObject, 4f); //dalekosc strzelania
     }
 
     void OnTriggerEnter2D (Collider2D col)

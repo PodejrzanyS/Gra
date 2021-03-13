@@ -32,6 +32,7 @@ public class movement : MonoBehaviour
     int highscore;
     int currency;
     int speed;
+    float curHealth;
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
