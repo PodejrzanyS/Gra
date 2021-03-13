@@ -333,15 +333,15 @@ MonoBehaviour:
   m_FillRect: {fileID: 1149723787}
   m_HandleRect: {fileID: 1297967484}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.001
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.088
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 941102907}
-        m_MethodName: set_volume
+      - m_Target: {fileID: 1527308119}
+        m_MethodName: VolumeUpdater
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4873,6 +4873,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1527308120}
+  - component: {fileID: 1527308119}
   m_Layer: 0
   m_Name: MusicControl
   m_TagString: Untagged
@@ -4880,6 +4881,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1527308119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1527308118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3c3c55f168891c4fae9691092ab7e1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeSlider: {fileID: 81624655}
+  ObjectMusic: {fileID: 941102906}
 --- !u!4 &1527308120
 Transform:
   m_ObjectHideFlags: 0

@@ -29,9 +29,9 @@ public class MuzykaSlider : MonoBehaviour
         PlayerPrefs.SetFloat("Volume", MusicVolume);
     }
 
-    public void VolumeUpdater(float volume)
+    public void VolumeUpdater(float Volume)
     {
-        MusicVolume = volume;
+        MusicVolume = Volume;
     }
 
     public void MusicReset()
