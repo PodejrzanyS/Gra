@@ -42,14 +42,14 @@ public class Upgrade : MonoBehaviour
 
     public void Plus_Damage()
     {
-        damage = damage + 10;
+        damage = damage + 1;
         PlayerPrefs.SetInt("damage", damage);
         currency = currency - 5;
         PlayerPrefs.SetInt("currency", currency);
     }
     public void Minus_Damage()
     {
-        damage = damage - 10;
+        damage = damage - 1;
         PlayerPrefs.SetInt("damage", damage);
         currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
@@ -75,7 +75,7 @@ public class Upgrade : MonoBehaviour
         {
             niszczenie = niszczenie + 1;
             PlayerPrefs.SetInt("niszczenie", niszczenie);
-            currency = currency - 100;
+            currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
         }
        

@@ -2498,7 +2498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f59e70f1a6b42147b1892af7bc17684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  silaSkoku: 450
+  silaSkoku: 400
   kierunekWPrawo: 1
   spawnPosition: {fileID: 1466901857}
   playerTransform: {fileID: 1549738431}
