@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour
     public ParticleSystem pyk;
     public GameObject shit;
     int damage;
+    int health=100;
     int destroy = 0;
     [SerializeField]
     public GameObject bullet;
@@ -35,6 +36,7 @@ public class Enemy1 : MonoBehaviour
         {
             curHealth = maxHealth;
         }
+
     }
     public EnemyStats stats = new EnemyStats();
 
@@ -62,20 +64,21 @@ public class Enemy1 : MonoBehaviour
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
+            health = health + 30;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "shoot")
         {
-            stats.curHealth = stats.curHealth - damage;
-            if (stats.curHealth <= 0 && destroy==0)
+             health = health - damage;
+            if (health <= 0 && destroy==0)
             {
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
                 myAnimator.SetBool("IsDead", true);
-                Destroy(gameObject,2f);
+                Destroy(gameObject,0.5f);
                 pyk.Play();
                 destroy = 1;
             }
