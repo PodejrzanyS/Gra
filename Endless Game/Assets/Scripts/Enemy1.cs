@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour
     public ParticleSystem pyk;
     public GameObject shit;
     int damage;
+    int destroy = 0;
     [SerializeField]
     public GameObject bullet;
     float fireRate;
@@ -68,7 +69,7 @@ public class Enemy1 : MonoBehaviour
         if (collision.tag == "shoot")
         {
             stats.curHealth = stats.curHealth - damage;
-            if (stats.curHealth <= 0)
+            if (stats.curHealth <= 0 && destroy==0)
             {
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
@@ -76,6 +77,7 @@ public class Enemy1 : MonoBehaviour
                 myAnimator.SetBool("IsDead", true);
                 Destroy(gameObject,2f);
                 pyk.Play();
+                destroy = 1;
             }
 
         }
