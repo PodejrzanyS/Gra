@@ -182,9 +182,9 @@ public class movement : MonoBehaviour
 
             }
         }
-        
 
 
+        PlayerPrefs.SetInt("coins", coins);
 
         Vector3 skala = gameObject.transform.localScale;
 

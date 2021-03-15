@@ -9,6 +9,7 @@ public class Enemy1 : MonoBehaviour
     public ParticleSystem pyk;
     public GameObject shit;
     int damage;
+    int coins;
     int health=100;
     int destroy = 0;
     [SerializeField]
@@ -47,7 +48,7 @@ public class Enemy1 : MonoBehaviour
         myAnimator.enabled = true;
 
         stats.Init();
-        damage = PlayerPrefs.GetInt("damage", damage);
+        damage = PlayerPrefs.GetInt("damage");
 
 
         fireRate = 2f; // szybkosc strzelania
@@ -57,21 +58,22 @@ public class Enemy1 : MonoBehaviour
     void Update()
     {
         CheckIfTimeToFire();
+        coins = PlayerPrefs.GetInt("coins");
     }
     void CheckIfTimeToFire()
     {
-        if (Time.time > nextFire)
+        if (Time.time < nextFire)
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
-            health = health + 5;
+            
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "shoot")
         {
-             health = health - damage;
+             health = (health+coins) - damage;
             if (health <= 0 && destroy==0)
             {
                 Instantiate(shit, transform.position, Quaternion.identity);
