@@ -2502,6 +2502,7 @@ MonoBehaviour:
   kierunekWPrawo: 1
   spawnPosition: {fileID: 1466901857}
   playerTransform: {fileID: 1549738431}
+  money: {fileID: 3407247975060672529, guid: 207b9605889fb734fa91a9ff3e3e8d8f, type: 3}
   GroundCheck: {fileID: 682147874}
   groundCheckRadius: 0
   whatIsGround:

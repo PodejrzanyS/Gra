@@ -13,7 +13,9 @@ public class movement : MonoBehaviour
     public bool kierunekWPrawo = true;
     public Transform spawnPosition;
     public Transform playerTransform;
-
+    public GameObject money;
+    int number;
+    System.Random random = new System.Random();
 
     public Transform GroundCheck;
     public float groundCheckRadius;
@@ -58,6 +60,17 @@ public class movement : MonoBehaviour
             playerTransform.position = spawnPosition.position;
             Scene thisScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(thisScene.name);
+
+        }
+
+        if (collision.tag == "beczka")
+        {
+            number = random.Next(1, 4);
+            if (number==2)
+            {
+                Instantiate(money, transform.position, Quaternion.identity);
+            }
+            Destroy(collision.gameObject);
 
         }
         if (collision.tag == "SuperJump")

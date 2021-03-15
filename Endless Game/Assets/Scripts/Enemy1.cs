@@ -62,7 +62,7 @@ public class Enemy1 : MonoBehaviour
     }
     void CheckIfTimeToFire()
     {
-        if (Time.time < nextFire)
+        if (Time.time > nextFire)
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;

@@ -15,6 +15,7 @@ TagManager:
   - Muzyka
   - Quit
   - Ground
+  - beczka
   layers:
   - Default
   - TransparentFX
