@@ -64,7 +64,7 @@ public class Enemy1 : MonoBehaviour
         {
             Instantiate(bullet, transform.position, Quaternion.identity);
             nextFire = Time.time + fireRate;
-            health = health + 30;
+            health = health + 5;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

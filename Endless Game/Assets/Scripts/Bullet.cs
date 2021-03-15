@@ -59,7 +59,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
+        if (collision.tag == "Ground")
+        {
+            Destroy(gameObject);
+        }
 
 
 

@@ -14,6 +14,7 @@ TagManager:
   - kulki
   - Muzyka
   - Quit
+  - Ground
   layers:
   - Default
   - TransparentFX
