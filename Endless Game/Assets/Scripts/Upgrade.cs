@@ -17,6 +17,7 @@ public class Upgrade : MonoBehaviour
     public Text speedtxt;
     public Text niszczenietxt;
     public Text healthtxt;
+    
 
     void Start()
     {
@@ -36,11 +37,11 @@ public class Upgrade : MonoBehaviour
         
         if (niszczenie == 0)
         {
-            niszczenietxt.text = "Niszczenie strzał: " + niszczenie;
+            niszczenietxt.text = "Penetracja: " + niszczenie;
         }
         else
         {
-            niszczenietxt.text = "Upgrade wykorzystany";
+            niszczenietxt.text = "Penetracja:1";
         }
 
     }
