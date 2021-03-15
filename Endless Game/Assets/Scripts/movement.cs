@@ -95,6 +95,10 @@ public class movement : MonoBehaviour
             Scene thisScene = SceneManager.GetActiveScene();
             SceneManager.LoadScene(thisScene.name);
         }
+        if (collision.tag == "Quit")
+        {
+            SceneManager.LoadScene("Menu");
+        }
 
     }
 
