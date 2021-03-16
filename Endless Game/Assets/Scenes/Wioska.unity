@@ -2274,8 +2274,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -22.1, y: 180.6}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: -31.49, y: 180.6}
+  m_SizeDelta: {x: 141.21274, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &480003112
 MonoBehaviour:
@@ -4328,7 +4328,6 @@ MonoBehaviour:
   kierunekWPrawo: 1
   spawnPosition: {fileID: 151934177}
   playerTransform: {fileID: 937676115}
-  money: {fileID: 0}
   GroundCheck: {fileID: 1560842612}
   groundCheckRadius: 0
   whatIsGround:
@@ -5965,7 +5964,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -63.436, y: 219.5}
+  m_AnchoredPosition: {x: -48.4, y: 219.5}
   m_SizeDelta: {x: 266.6945, y: 52.550774}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1458428824

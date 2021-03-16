@@ -104,6 +104,7 @@ MonoBehaviour:
   czekaj: 0.5
   fallSpeed: 10
   czekajd: 0.6
+  money: {fileID: 3407247975060672529, guid: 207b9605889fb734fa91a9ff3e3e8d8f, type: 3}
 --- !u!61 &1274524094492707048
 BoxCollider2D:
   m_ObjectHideFlags: 0

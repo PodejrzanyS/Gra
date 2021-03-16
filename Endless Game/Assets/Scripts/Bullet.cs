@@ -13,6 +13,9 @@ public class Bullet : MonoBehaviour
     public float fallSpeed = 10.0f;
     public float czekajd = 0.6f;
     int niszczenie;
+    public GameObject money;
+    int number;
+    System.Random random = new System.Random();
     // Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,17 @@ public class Bullet : MonoBehaviour
         if (collision.tag == "Ground")
         {
             Destroy(gameObject);
+        }
+
+        if (collision.tag == "beczka")
+        {
+            number = random.Next(1, 4);
+            if (number == 2)
+            {
+                Instantiate(money, transform.position, Quaternion.identity);
+            }
+            Destroy(collision.gameObject);
+
         }
 
 
