@@ -702,7 +702,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1008845657}
+      - m_Target: {fileID: 1008845662}
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
@@ -3688,7 +3688,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1008845657}
+      - m_Target: {fileID: 1008845662}
         m_MethodName: LoadMenu
         m_Mode: 1
         m_Arguments:
@@ -4758,6 +4758,7 @@ GameObject:
   - component: {fileID: 1008845659}
   - component: {fileID: 1008845658}
   - component: {fileID: 1008845657}
+  - component: {fileID: 1008845662}
   m_Layer: 5
   m_Name: Canvas1
   m_TagString: Untagged
@@ -4777,7 +4778,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83e2ccecb970384ca1c0f4c78c2fd32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseMenuUI: {fileID: 2139517236}
 --- !u!114 &1008845658
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4862,6 +4862,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1008845662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008845656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7bed63a2b20ac4a8bb5085f7d298a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenuUI: {fileID: 2139517236}
 --- !u!1 &1030449445
 GameObject:
   m_ObjectHideFlags: 0
@@ -8228,7 +8241,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1008845657}
+      - m_Target: {fileID: 1008845662}
         m_MethodName: Resume
         m_Mode: 1
         m_Arguments:
