@@ -32,7 +32,7 @@ public class ShopTriggerCollider : MonoBehaviour
         {
             UpgradeMenu.SetActive(true);
         }
-        if ((triggerActive) && (Input.GetKeyDown(KeyCode.E)) && (UpgradeMenu.activeSelf))
+        if (!triggerActive)
         {
             UpgradeMenu.SetActive(false);
         }
