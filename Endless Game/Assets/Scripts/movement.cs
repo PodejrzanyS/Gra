@@ -51,7 +51,7 @@ public class movement : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             rbBody.velocity = new Vector2(0,0);
-            rbBody.AddRelativeForce(new Vector2(-300,300));
+            rbBody.AddRelativeForce(new Vector2(0,400));
             health = health - 20;
             Debug.Log("Hit!");
 
@@ -59,7 +59,7 @@ public class movement : MonoBehaviour
         if (collision.tag == "kulki")
         {
             rbBody.velocity = new Vector2(0, 0);
-            rbBody.AddRelativeForce(new Vector2(-300,0));
+            rbBody.AddRelativeForce(new Vector2(0,200));
             health = health - 50;
             Debug.Log("Hit!");
         }
