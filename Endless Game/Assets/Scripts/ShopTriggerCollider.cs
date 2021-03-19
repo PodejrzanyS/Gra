@@ -36,5 +36,9 @@ public class ShopTriggerCollider : MonoBehaviour
         {
             UpgradeMenu.SetActive(false);
         }
+        if (triggerActive)
+        {
+            UpgradeMenu.SetActive(false);
+        }
     }
 }

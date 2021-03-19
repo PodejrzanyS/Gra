@@ -119,7 +119,7 @@ public class movement : MonoBehaviour
         highscore = PlayerPrefs.GetInt("highscore");
         currency = PlayerPrefs.GetInt("currency");
         speed = PlayerPrefs.GetInt("speed");
-        coinText.text = currency.ToString();
+
     }
 
     private void FixedUpdate()

@@ -17,24 +17,24 @@ public class Upgrade : MonoBehaviour
     public Text speedtxt;
     public Text niszczenietxt;
     public Text healthtxt;
-    
+    public GameObject UpgradeMenu;
 
     void Start()
     {
         currency = PlayerPrefs.GetInt("currency");
-        damage = PlayerPrefs.GetInt("damage",40);
-        speed = PlayerPrefs.GetInt("speed",1);
+        damage = PlayerPrefs.GetInt("damage", 40);
+        speed = PlayerPrefs.GetInt("speed", 1);
         niszczenie = PlayerPrefs.GetInt("niszczenie");
         maxHealth = PlayerPrefs.GetInt("maxHealth", 100);
     }
-    
+
     void Update()
     {
-        healthtxt.text = "Health: " + maxHealth; 
+        healthtxt.text = "Health: " + maxHealth;
         coinsy.text = "Coinsy: " + currency;
         damagetxt.text = "Damage: " + damage;
         speedtxt.text = "Speed: " + speed;
-        
+
         if (niszczenie == 0)
         {
             niszczenietxt.text = "Penetracja: " + niszczenie;
@@ -84,7 +84,7 @@ public class Upgrade : MonoBehaviour
             currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
         }
-       
+
     }
     public void Minus_Strzalki()
     {
@@ -110,5 +110,8 @@ public class Upgrade : MonoBehaviour
         currency = currency - 1;
         PlayerPrefs.SetInt("currency", currency);
     }
-
+    public void CloseMenu()
+    {
+        UpgradeMenu.SetActive(false);
+    }
 }
