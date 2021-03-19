@@ -5,20 +5,34 @@ using UnityEngine;
 public class ShopTriggerCollider : MonoBehaviour
 {
     [SerializeField] private GameObject UpgradeMenu;
+    [SerializeField] private bool triggerActive = false;
 
-    private void OnTriggerEnter2D(Collider2D collider)
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        Player shopCustomer = collider.GetComponent<Player>();
-        if (shopCustomer != null)
+        if (other.CompareTag("Player"))
         {
-            UpgradeMenu.SetActive(true);
+            triggerActive = true;
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collider)
+
+    public void OnTriggerExit2D(Collider2D other)
     {
-        Player shopCustomer = collider.GetComponent<Player>();
-        if (shopCustomer != null)
+        
+        if (other.CompareTag("Player"))
+        {
+            triggerActive = false;
+           
+        }
+    }
+
+    private void Update()
+    {
+        if (triggerActive && Input.GetKeyDown(KeyCode.E) && (!UpgradeMenu.activeSelf))
+        {
+            UpgradeMenu.SetActive(true);
+        }
+        if ((triggerActive) && (Input.GetKeyDown(KeyCode.E)) && (UpgradeMenu.activeSelf))
         {
             UpgradeMenu.SetActive(false);
         }
