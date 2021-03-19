@@ -22,7 +22,6 @@ public class movement : MonoBehaviour
     public bool grounded;
     private bool candoublejump;
     public int coins = 0;
-    public Text coinText;
     private Animator anim;
     public int jumpCount;
     private bool doubleJump;
@@ -33,8 +32,11 @@ public class movement : MonoBehaviour
     int highscore;
     int currency;
     int speed;
+    int health = 100;
     float curHealth;
-   
+    int zabici;
+    public Text zabity;
+    int destroy = 0;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "collectable")
@@ -44,25 +46,25 @@ public class movement : MonoBehaviour
             currency++;
             PlayerPrefs.SetInt("currency", currency);
             PlayerPrefs.Save();
-            coinText.text = currency.ToString();
         }
 
         if (collision.tag == "Enemy")
         {
-            playerTransform.position = spawnPosition.position;
-            Scene thisScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(thisScene.name);
+            rbBody.velocity = new Vector2(0,0);
+            rbBody.AddRelativeForce(new Vector2(-300,300));
+            health = health - 20;
+            Debug.Log("Hit!");
 
         }
         if (collision.tag == "kulki")
         {
-            playerTransform.position = spawnPosition.position;
-            Scene thisScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(thisScene.name);
-
+            rbBody.velocity = new Vector2(0, 0);
+            rbBody.AddRelativeForce(new Vector2(-300,0));
+            health = health - 50;
+            Debug.Log("Hit!");
         }
 
-        if (collision.tag == "SuperJump")
+            if (collision.tag == "SuperJump")
         {
             Destroy(collision.gameObject);
             silaSkoku = 625;
@@ -119,7 +121,7 @@ public class movement : MonoBehaviour
         highscore = PlayerPrefs.GetInt("highscore");
         currency = PlayerPrefs.GetInt("currency");
         speed = PlayerPrefs.GetInt("speed");
-
+        zabici = PlayerPrefs.GetInt("zabici");
     }
 
     private void FixedUpdate()
@@ -131,6 +133,14 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (health <= 0 && destroy == 0)
+        {
+            Destroy(gameObject, 0.5f);
+            destroy = 1;
+            playerTransform.position = spawnPosition.position;
+            Scene thisScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(thisScene.name);
+        }
         if (highscore <= coins)
         {
             highscore = coins;
@@ -139,7 +149,8 @@ public class movement : MonoBehaviour
         }
         highScore.text = "Highscore: " + highscore;
         score.text = "Score: " + coins;
-        
+        zabici = PlayerPrefs.GetInt("zabici");
+        zabity.text = "Zabitych: " + zabici;
 
         if (grounded)
         {
@@ -184,7 +195,6 @@ public class movement : MonoBehaviour
 
             }
         }
-
 
         PlayerPrefs.SetInt("coins", coins);
 

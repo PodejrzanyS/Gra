@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShopTriggerCollider : MonoBehaviour
 {
+    [SerializeField] private GameObject Text;
     [SerializeField] private GameObject UpgradeMenu;
     [SerializeField] private bool triggerActive = false;
 
@@ -32,12 +33,14 @@ public class ShopTriggerCollider : MonoBehaviour
         {
             UpgradeMenu.SetActive(true);
         }
-        if (!triggerActive)
-        {
-            UpgradeMenu.SetActive(false);
-        }
         if (triggerActive)
         {
+            Text.SetActive(true);
+        }
+
+        if (!triggerActive)
+        {
+            Text.SetActive(false);
             UpgradeMenu.SetActive(false);
         }
     }

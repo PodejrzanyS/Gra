@@ -17,8 +17,9 @@ public class Enemy1 : MonoBehaviour
     float fireRate;
     float nextFire;
     Animator myAnimator;
+    int zabici;
     [System.Serializable]
-  
+
 
 
 
@@ -44,6 +45,7 @@ public class Enemy1 : MonoBehaviour
 
     void Start()
     {
+        zabici = PlayerPrefs.GetInt("zabici");
         myAnimator = GetComponent<Animator>();
         myAnimator.enabled = true;
 
@@ -76,6 +78,9 @@ public class Enemy1 : MonoBehaviour
              health = (health+coins) - damage;
             if (health <= 0 && destroy==0)
             {
+                zabici++;
+                PlayerPrefs.SetInt("zabici", zabici);
+                PlayerPrefs.Save();
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);

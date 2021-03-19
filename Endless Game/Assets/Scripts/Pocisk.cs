@@ -21,7 +21,7 @@ public class Pocisk : MonoBehaviour
 
     void OnTriggerEnter2D (Collider2D col)
     {
-        if (col.gameObject.name.Equals ("Player"))
+        if (col.gameObject.tag.Equals ("Player"))
         {
             Debug.Log("Hit!");
             Destroy(gameObject);
