@@ -54,6 +54,7 @@ public class movement : MonoBehaviour
             rbBody.AddRelativeForce(new Vector2(0,400));
             health = health - 20;
             Debug.Log("Hit!");
+            anim.SetTrigger("Hurt");
 
         }
         if (collision.tag == "kulki")
@@ -62,6 +63,7 @@ public class movement : MonoBehaviour
             rbBody.AddRelativeForce(new Vector2(0,200));
             health = health - 50;
             Debug.Log("Hit!");
+            anim.SetTrigger("Hurt");
         }
 
             if (collision.tag == "SuperJump")

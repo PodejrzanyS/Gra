@@ -5,20 +5,26 @@ using UnityEngine;
 public class shoot : MonoBehaviour
 {
     // Start is called before the first frame update
-    
-    
+
+    private Animator anim;
     public Transform firePoint;
     public int damage;
     public GameObject bulletPrefab;
-    
 
-    // Update is called once per frame
-    void Update()
+    void Start()
+    {
+
+        anim = GetComponent<Animator>();
+    }
+        // Update is called once per frame
+        void Update()
     {
         
         if (Input.GetButtonDown("Fire1"))
         {
-           Shoot();
+            anim.SetTrigger("strzela");
+            Shoot();
+            
         }
     }
 
