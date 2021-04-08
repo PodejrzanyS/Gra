@@ -29,20 +29,38 @@ public class movement : MonoBehaviour
     SpriteRenderer sr;
     public Text score;
     public Text highScore;
+    public Text level;
     int highscore;
     int currency;
     int speed;
     int health = 100;
     float curHealth;
     int zabici;
+    int lvl;
+    int exp;
+    int n;
+    int m = 200;
     public Text zabity;
     int destroy = 0;
+
+    public void Level()
+    {
+        if (exp > m)
+        {
+            lvl++;
+            m = m * 3;
+        }
+    }
+   
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "collectable")
         {
             Destroy(collision.gameObject);
             coins += 1;
+            Level();
+            PlayerPrefs.SetInt("level", lvl);
+            n = 1;       
             currency++;
             PlayerPrefs.SetInt("currency", currency);
             PlayerPrefs.Save();
@@ -123,7 +141,9 @@ public class movement : MonoBehaviour
         highscore = PlayerPrefs.GetInt("highscore");
         currency = PlayerPrefs.GetInt("currency");
         speed = PlayerPrefs.GetInt("speed");
-        zabici = PlayerPrefs.GetInt("zabici");
+        lvl = PlayerPrefs.GetInt("level");
+        PlayerPrefs.SetInt("zabici", 0);
+        PlayerPrefs.SetInt("exp", 0);
     }
 
     private void FixedUpdate()
@@ -135,6 +155,8 @@ public class movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        zabici = PlayerPrefs.GetInt("zabici");
+        exp = PlayerPrefs.GetInt("exp");
         if (health <= 0 && destroy == 0)
         {
             Destroy(gameObject, 0.5f);
@@ -151,8 +173,9 @@ public class movement : MonoBehaviour
         }
         highScore.text = "Highscore: " + highscore;
         score.text = "Score: " + coins;
-        zabici = PlayerPrefs.GetInt("zabici");
+        zabici = PlayerPrefs.GetInt("zabici",0);
         zabity.text = "Zabitych: " + zabici;
+        level.text = "Level: " + lvl;
 
         if (grounded)
         {
@@ -235,9 +258,10 @@ public class movement : MonoBehaviour
             rbBody.velocity = new Vector2(ruchPoziomy * speed * 2, rbBody.velocity.y);
            
         }
-       
 
     }
+
+  
     private IEnumerator ResetPower()
     {
         yield return new WaitForSeconds(10);

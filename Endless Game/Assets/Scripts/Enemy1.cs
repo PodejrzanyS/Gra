@@ -9,15 +9,17 @@ public class Enemy1 : MonoBehaviour
     public ParticleSystem pyk;
     public GameObject shit;
     int damage;
+    int lvl;
     int coins;
     int health=100;
     int destroy = 0;
+    int zabici;
+    int exp;
     [SerializeField]
     public GameObject bullet;
     float fireRate;
     float nextFire;
     Animator myAnimator;
-    int zabici;
     [System.Serializable]
 
 
@@ -45,7 +47,6 @@ public class Enemy1 : MonoBehaviour
 
     void Start()
     {
-        zabici = PlayerPrefs.GetInt("zabici");
         myAnimator = GetComponent<Animator>();
         myAnimator.enabled = true;
 
@@ -61,6 +62,9 @@ public class Enemy1 : MonoBehaviour
     {
         CheckIfTimeToFire();
         coins = PlayerPrefs.GetInt("coins");
+        zabici = PlayerPrefs.GetInt("zabici");
+        exp = PlayerPrefs.GetInt("exp");
+
     }
     void CheckIfTimeToFire()
     {
@@ -80,7 +84,6 @@ public class Enemy1 : MonoBehaviour
             {
                 zabici++;
                 PlayerPrefs.SetInt("zabici", zabici);
-                PlayerPrefs.Save();
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
                 Instantiate(shit, transform.position, Quaternion.identity);
@@ -88,6 +91,9 @@ public class Enemy1 : MonoBehaviour
                 Destroy(gameObject,0.5f);
                 pyk.Play();
                 destroy = 1;
+                exp = exp + 100;
+                PlayerPrefs.SetInt("exp", exp);
+
             }
 
         }

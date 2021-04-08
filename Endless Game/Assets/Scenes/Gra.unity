@@ -1248,7 +1248,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 338.64, y: 179.96}
+  m_AnchoredPosition: {x: 336.8, y: 150.3}
   m_SizeDelta: {x: 122.72757, y: 59.739594}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &687439658
@@ -1701,7 +1701,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 383.2, y: 157}
+  m_AnchoredPosition: {x: 381.36002, y: 127.340004}
   m_SizeDelta: {x: 139.53079, y: 17.790318}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1077162627
@@ -2178,6 +2178,7 @@ GameObject:
   - component: {fileID: 1549738427}
   - component: {fileID: 1549738434}
   - component: {fileID: 1549738433}
+  - component: {fileID: 1549738435}
   m_Layer: 15
   m_Name: Woodcutter_run_0
   m_TagString: Player
@@ -2232,7 +2233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f59e70f1a6b42147b1892af7bc17684, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  silaSkoku: 400
+  silaSkoku: 450
   kierunekWPrawo: 1
   spawnPosition: {fileID: 1466901857}
   playerTransform: {fileID: 1549738431}
@@ -2246,6 +2247,7 @@ MonoBehaviour:
   jumpCount: 0
   score: {fileID: 1077162631}
   highScore: {fileID: 744549255}
+  level: {fileID: 2074852212}
   zabity: {fileID: 988173799}
 --- !u!212 &1549738430
 SpriteRenderer:
@@ -2373,6 +2375,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &1549738435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549738426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6acc49d0c8d7fb045a125c24000d2245, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1755471837
 GameObject:
   m_ObjectHideFlags: 0
@@ -2894,7 +2908,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 378.1, y: 183.83}
+  m_AnchoredPosition: {x: 376.26, y: 154.17}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2074852212
