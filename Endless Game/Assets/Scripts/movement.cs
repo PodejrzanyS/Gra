@@ -47,10 +47,11 @@ public class movement : MonoBehaviour
     {
         if (exp > m)
         {
-            lvl++;
-            m = m * 3;
+            lvl++; 
+            m = m * lvl;
         }
     }
+    
    
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -58,9 +59,7 @@ public class movement : MonoBehaviour
         {
             Destroy(collision.gameObject);
             coins += 1;
-            Level();
-            PlayerPrefs.SetInt("level", lvl);
-            n = 1;       
+            PlayerPrefs.SetInt("level", lvl);      
             currency++;
             PlayerPrefs.SetInt("currency", currency);
             PlayerPrefs.Save();
@@ -86,6 +85,7 @@ public class movement : MonoBehaviour
 
             if (collision.tag == "SuperJump")
         {
+            Level();
             Destroy(collision.gameObject);
             silaSkoku = 625;
             if (tak == 1 && silaSkoku == 625)
@@ -130,6 +130,7 @@ public class movement : MonoBehaviour
     {
         kierunekWPrawo = !kierunekWPrawo; //jeśli było w prawy czyli true zmieniany na false i na odwrót
         transform.Rotate(0f, 180f, 0f);
+        
     }
 
     // Use this for initialization
@@ -144,6 +145,9 @@ public class movement : MonoBehaviour
         lvl = PlayerPrefs.GetInt("level");
         PlayerPrefs.SetInt("zabici", 0);
         PlayerPrefs.SetInt("exp", 0);
+
+        m = 200 * lvl;
+
     }
 
     private void FixedUpdate()
