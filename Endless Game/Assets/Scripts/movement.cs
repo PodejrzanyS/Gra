@@ -58,8 +58,7 @@ public class movement : MonoBehaviour
         if (collision.tag == "collectable")
         {
             Destroy(collision.gameObject);
-            coins += 1;
-            PlayerPrefs.SetInt("level", lvl);      
+            coins += 1;     
             currency++;
             PlayerPrefs.SetInt("currency", currency);
             PlayerPrefs.Save();
@@ -86,6 +85,7 @@ public class movement : MonoBehaviour
             if (collision.tag == "SuperJump")
         {
             Level();
+            PlayerPrefs.SetInt("level", lvl);
             Destroy(collision.gameObject);
             silaSkoku = 625;
             if (tak == 1 && silaSkoku == 625)
