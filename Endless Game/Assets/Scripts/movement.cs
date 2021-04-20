@@ -35,6 +35,7 @@ public class movement : MonoBehaviour
     int speed;
     int health = 100;
     float curHealth;
+    int maxHealth;
     int zabici;
     int lvl;
     int exp;
@@ -42,6 +43,7 @@ public class movement : MonoBehaviour
     int m = 200;
     public Text zabity;
     int destroy = 0;
+    public HealthBar healthBar;
 
     public void Level()
     {
@@ -69,6 +71,7 @@ public class movement : MonoBehaviour
             rbBody.velocity = new Vector2(0,0);
             rbBody.AddRelativeForce(new Vector2(0,400));
             health = health - 20;
+            healthBar.SetHealth(health);
             Debug.Log("Hit!");
             anim.SetTrigger("Hurt");
 
@@ -78,6 +81,7 @@ public class movement : MonoBehaviour
             rbBody.velocity = new Vector2(0, 0);
             rbBody.AddRelativeForce(new Vector2(0,200));
             health = health - 50;
+            healthBar.SetHealth(health);
             Debug.Log("Hit!");
             anim.SetTrigger("Hurt");
         }
@@ -147,7 +151,8 @@ public class movement : MonoBehaviour
         PlayerPrefs.SetInt("exp", 0);
 
         m = 200 * lvl;
-
+        curHealth = health;
+        healthBar.SetMaxHealth(health);
     }
 
     private void FixedUpdate()
