@@ -4252,6 +4252,8 @@ MonoBehaviour:
   highScore: {fileID: 1327030912}
   level: {fileID: 1896796136}
   zabity: {fileID: 972047669}
+  healthBar: {fileID: 1136462290624542497, guid: afe38d60eea36444799dc6873b1c48c3,
+    type: 3}
 --- !u!114 &937676113
 MonoBehaviour:
   m_ObjectHideFlags: 0

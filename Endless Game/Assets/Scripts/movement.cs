@@ -151,6 +151,7 @@ public class movement : MonoBehaviour
         PlayerPrefs.SetInt("exp", 0);
 
         m = 200 * lvl;
+        health= PlayerPrefs.GetInt("maxHealth");
         curHealth = health;
         healthBar.SetMaxHealth(health);
     }
