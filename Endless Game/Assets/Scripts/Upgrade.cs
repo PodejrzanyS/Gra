@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Upgrade : MonoBehaviour
 {
     int currency;
-    int damage;
+    int damage=40;
     int niszczenie;
     int speed;
     int maxHealth;

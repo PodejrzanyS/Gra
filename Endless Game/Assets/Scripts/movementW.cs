@@ -13,8 +13,7 @@ public class movementW : MonoBehaviour
     public bool kierunekWPrawo = true;
     public Transform spawnPosition;
     public Transform playerTransform;
-    int number;
-    System.Random random = new System.Random();
+
 
     public Transform GroundCheck;
     public float groundCheckRadius;
@@ -22,44 +21,20 @@ public class movementW : MonoBehaviour
     public bool grounded;
     private bool candoublejump;
     public int coins = 0;
+    public Text coinText;
     private Animator anim;
     public int jumpCount;
+    private bool doubleJump;
 
-    int tak = 0;
-    SpriteRenderer sr;
-    public Text score;
-    public Text highScore;
-    public Text level;
-    int highscore;
-    int currency;
-    int speed;
-    int health;
-    float curHealth;
-    int maxHealth;
-    int zabici;
-    int lvl;
-    int exp;
-    int n;
-    int m = 200;
-    public Text zabity;
-    int destroy = 0;
-    public HealthBar healthBar;
 
-    public void Level()
-    {
-        if (exp > m)
-        {
-            lvl++;
-            m = m * lvl;
-        }
-    }
+
+
 
 
     void Flip()
     {
         kierunekWPrawo = !kierunekWPrawo; //jeśli było w prawy czyli true zmieniany na false i na odwrót
         transform.Rotate(0f, 180f, 0f);
-
     }
 
     // Use this for initialization
@@ -67,7 +42,6 @@ public class movementW : MonoBehaviour
     {
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
     }
 
     private void FixedUpdate()
@@ -75,14 +49,14 @@ public class movementW : MonoBehaviour
         grounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
     }
 
-
     // Update is called once per frame
     void Update()
     {
 
+
         if (grounded)
         {
-
+            doubleJump = false;
             anim.SetBool("isJumping", false);
         }
         else
@@ -91,21 +65,22 @@ public class movementW : MonoBehaviour
         }
 
         float ruchPoziomy = Input.GetAxis("Horizontal");
+
         float ruchPionowy = Input.GetAxis("Vertical");
 
-        rbBody.velocity = new Vector2(ruchPoziomy * speed, rbBody.velocity.y);
+        rbBody.velocity = new Vector2(ruchPoziomy * 5, rbBody.velocity.y);
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins < 5)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins < 10)
         {
             anim.SetTrigger("takeOf");
             rbBody.AddForce(new Vector2(0f, silaSkoku));
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins >= 5)
+        if (Input.GetKeyDown(KeyCode.Space) && grounded && coins >= 10)
         {
-            rbBody.velocity = new Vector2(rbBody.velocity.x, 0);
+
             rbBody.AddRelativeForce(new Vector2(0, silaSkoku));
             candoublejump = true;
             jumpCount++;
@@ -116,7 +91,7 @@ public class movementW : MonoBehaviour
         {
             if (candoublejump == true && Input.GetKeyDown(KeyCode.Space))
             {
-                rbBody.velocity = new Vector2(rbBody.velocity.x, 0);
+
                 rbBody.AddRelativeForce(new Vector2(0, silaSkoku));
                 candoublejump = false;
                 jumpCount = 1;
@@ -124,7 +99,8 @@ public class movementW : MonoBehaviour
             }
         }
 
-        PlayerPrefs.SetInt("coins", coins);
+
+
 
         Vector3 skala = gameObject.transform.localScale;
 
@@ -147,22 +123,10 @@ public class movementW : MonoBehaviour
             anim.SetInteger("FazaAnimacji", 0);
         }
 
-        if (playerTransform.position.y < -30)
-        {
-            playerTransform.position = spawnPosition.position;
-            Scene thisScene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(thisScene.name);
 
-
-        }
-
-        if (tak == 1)
-        {
-            rbBody.velocity = new Vector2(ruchPoziomy * speed * 2, rbBody.velocity.y);
-
-        }
 
     }
+
 
 
 }

@@ -49,7 +49,7 @@ public class Enemy1 : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         myAnimator.enabled = true;
-
+        PlayerPrefs.SetInt("damage",40);
         stats.Init();
         damage = PlayerPrefs.GetInt("damage");
 

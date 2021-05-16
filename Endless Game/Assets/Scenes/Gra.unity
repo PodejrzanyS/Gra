@@ -785,6 +785,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1549738431}
+    - target: {fileID: 5147141176432493035, guid: 217e8c1865e1e8644b52cb45c94a8e4a,
+        type: 3}
+      propertyPath: moveSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7904494692619846151, guid: 217e8c1865e1e8644b52cb45c94a8e4a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2399,6 +2404,7 @@ GameObject:
   - component: {fileID: 1549738430}
   - component: {fileID: 1549738432}
   - component: {fileID: 1549738429}
+  - component: {fileID: 1549738436}
   - component: {fileID: 1549738428}
   - component: {fileID: 1549738427}
   - component: {fileID: 1549738434}
@@ -2613,6 +2619,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6acc49d0c8d7fb045a125c24000d2245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1549738436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549738426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b122208e16fbb714b95fac78392aa9d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  silaSkoku: 0
+  kierunekWPrawo: 1
+  spawnPosition: {fileID: 1466901857}
+  playerTransform: {fileID: 1549738431}
+  GroundCheck: {fileID: 682147874}
+  groundCheckRadius: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 256
+  grounded: 0
+  coins: 0
+  coinText: {fileID: 0}
+  jumpCount: 0
 --- !u!1 &1755471837
 GameObject:
   m_ObjectHideFlags: 0

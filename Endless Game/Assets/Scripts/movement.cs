@@ -128,12 +128,12 @@ public class movement : MonoBehaviour
 
     }
 
-    void Flip()
-    {
-        kierunekWPrawo = !kierunekWPrawo; //jeśli było w prawy czyli true zmieniany na false i na odwrót
-        transform.Rotate(0f, 180f, 0f);
-        
-    }
+   // void Flip()
+   // {
+    //    kierunekWPrawo = !kierunekWPrawo; //jeśli było w prawy czyli true zmieniany na false i na odwrót
+   //     transform.Rotate(0f, 180f, 0f);
+   //     
+   // }
 
     // Use this for initialization
     void Start()
@@ -145,7 +145,6 @@ public class movement : MonoBehaviour
         currency = PlayerPrefs.GetInt("currency");
         speed = PlayerPrefs.GetInt("speed");
         lvl = PlayerPrefs.GetInt("level");
-        PlayerPrefs.SetInt("maxHealth", 100);
         health = PlayerPrefs.GetInt("maxHealth");
         PlayerPrefs.SetInt("zabici", 0);
         PlayerPrefs.SetInt("exp", 0);
@@ -235,12 +234,12 @@ public class movement : MonoBehaviour
 
         if (ruchPoziomy < 0 && kierunekWPrawo == true) //Jeślizmienna ruchPoziomy jest mniejsza od zera to ruch w lewo
         {
-            Flip();
+           // Flip();
         }
 
         if (ruchPoziomy > 0 && kierunekWPrawo == false)
         {
-            Flip();
+           // Flip();
         }
 
         if (ruchPoziomy < 0 || ruchPoziomy > 0)
