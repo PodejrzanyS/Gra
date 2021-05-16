@@ -24,7 +24,7 @@ public class movement : MonoBehaviour
     public int coins = 0;
     private Animator anim;
     public int jumpCount;
-    private bool doubleJump;
+  
     int tak = 0;
     SpriteRenderer sr;
     public Text score;
@@ -33,7 +33,7 @@ public class movement : MonoBehaviour
     int highscore;
     int currency;
     int speed;
-    int health = 100;
+    int health;
     float curHealth;
     int maxHealth;
     int zabici;
@@ -73,7 +73,6 @@ public class movement : MonoBehaviour
             health = health - 20;
             healthBar.SetHealth(health);
             Debug.Log("Hit!");
-            anim.SetTrigger("Hurt");
 
         }
         if (collision.tag == "kulki")
@@ -83,7 +82,6 @@ public class movement : MonoBehaviour
             health = health - 50;
             healthBar.SetHealth(health);
             Debug.Log("Hit!");
-            anim.SetTrigger("Hurt");
         }
 
             if (collision.tag == "SuperJump")
@@ -147,11 +145,11 @@ public class movement : MonoBehaviour
         currency = PlayerPrefs.GetInt("currency");
         speed = PlayerPrefs.GetInt("speed");
         lvl = PlayerPrefs.GetInt("level");
+        PlayerPrefs.SetInt("maxHealth", 100);
+        health = PlayerPrefs.GetInt("maxHealth");
         PlayerPrefs.SetInt("zabici", 0);
         PlayerPrefs.SetInt("exp", 0);
-
         m = 200 * lvl;
-        health= PlayerPrefs.GetInt("maxHealth");
         curHealth = health;
         healthBar.SetMaxHealth(health);
     }
@@ -189,7 +187,7 @@ public class movement : MonoBehaviour
 
         if (grounded)
         {
-            doubleJump = false;
+          
             anim.SetBool("isJumping", false);
         }
         else

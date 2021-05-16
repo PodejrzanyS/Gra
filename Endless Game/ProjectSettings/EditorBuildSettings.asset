@@ -9,9 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
     guid: 6e18843eaacf7624d89672cd689dc80e
   - enabled: 1
-    path: Assets/Scenes/Gra.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Wioska.unity
     guid: 288f0aa0702da764e9a8801ce37a9c40
+  - enabled: 1
+    path: Assets/Scenes/Gra.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
   m_configObjects: {}
