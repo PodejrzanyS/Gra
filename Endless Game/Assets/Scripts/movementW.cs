@@ -25,6 +25,7 @@ public class movementW : MonoBehaviour
     private Animator anim;
     public int jumpCount;
     private bool doubleJump;
+    int speed;
 
 
 
@@ -42,6 +43,7 @@ public class movementW : MonoBehaviour
     {
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        speed = PlayerPrefs.GetInt("speed");
     }
 
     private void FixedUpdate()
@@ -100,7 +102,7 @@ public class movementW : MonoBehaviour
         }
 
 
-
+        rbBody.velocity = new Vector2(ruchPoziomy * speed, rbBody.velocity.y);
 
         Vector3 skala = gameObject.transform.localScale;
 
