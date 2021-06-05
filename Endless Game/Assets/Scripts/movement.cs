@@ -24,7 +24,7 @@ public class movement : MonoBehaviour
     public int coins = 0;
     private Animator anim;
     public int jumpCount;
-  
+    int wybor;
     int tak = 0;
     SpriteRenderer sr;
     public Text score;
@@ -151,6 +151,23 @@ public class movement : MonoBehaviour
         m = 200 * lvl;
         curHealth = health;
         healthBar.SetMaxHealth(health);
+        wybor = PlayerPrefs.GetInt("wybor");
+        if (wybor == 1)
+        {
+            sr.color = Color.blue;
+        }
+        if (wybor == 2)
+        {
+            sr.color = Color.magenta;
+        }
+        if (wybor == 3)
+        {
+            sr.color = Color.gray;
+        }
+        if (wybor == 4)
+        {
+            sr.color = Color.yellow;
+        }
     }
 
     private void FixedUpdate()

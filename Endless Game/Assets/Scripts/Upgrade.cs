@@ -11,6 +11,7 @@ public class Upgrade : MonoBehaviour
     int damage=40;
     int niszczenie;
     int speed;
+    int coins;
     int maxHealth;
     public Text coinsy;
     public Text damagetxt;
@@ -18,6 +19,9 @@ public class Upgrade : MonoBehaviour
     public Text niszczenietxt;
     public Text healthtxt;
     public GameObject UpgradeMenu;
+    string wybor;
+    int number;
+    System.Random random = new System.Random();
 
     void Start()
     {
@@ -44,71 +48,64 @@ public class Upgrade : MonoBehaviour
             niszczenietxt.text = "Penetracja:1";
         }
 
+
     }
 
     public void Plus_Damage()
     {
-        damage = damage + 1;
-        PlayerPrefs.SetInt("damage", damage);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
-    }
-    public void Minus_Damage()
-    {
-        damage = damage - 1;
-        PlayerPrefs.SetInt("damage", damage);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
+        if (currency >= 10)
+        {
+            damage = damage + 10;
+            PlayerPrefs.SetInt("damage", damage);
+            currency = currency - 10;
+            PlayerPrefs.SetInt("currency", currency);
+        }
     }
 
     public void Plus_Speed()
     {
-        speed = speed + 1;
-        PlayerPrefs.SetInt("speed", speed);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
-    }
-    public void Minus_Speed()
-    {
-        speed = speed - 1;
-        PlayerPrefs.SetInt("speed", speed);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
+        if (currency >= 20)
+        {
+            speed = speed + 1;
+            PlayerPrefs.SetInt("speed", speed);
+            currency = currency - 20;
+            PlayerPrefs.SetInt("currency", currency);
+        }
     }
     public void Plus_Strzalki()
     {
-        if (niszczenie == 0)
+        if (currency >= 30)
         {
-            niszczenie = niszczenie + 1;
-            PlayerPrefs.SetInt("niszczenie", niszczenie);
-            currency = currency - 1;
-            PlayerPrefs.SetInt("currency", currency);
+            if (niszczenie == 0)
+            {
+                niszczenie = niszczenie + 1;
+                PlayerPrefs.SetInt("niszczenie", niszczenie);
+                currency = currency - 30;
+                PlayerPrefs.SetInt("currency", currency);
+            }
         }
 
     }
-    public void Minus_Strzalki()
+    public void Plus_Health()
     {
-        if (niszczenie == 1)
+        if (currency >= 20)
         {
-            niszczenie = niszczenie - 1;
-            PlayerPrefs.SetInt("niszczenie", niszczenie);
-            currency = currency - 1;
+            maxHealth = maxHealth + 1;
+            PlayerPrefs.SetInt("maxHealth", maxHealth);
+            currency = currency - 20;
             PlayerPrefs.SetInt("currency", currency);
         }
     }
-    public void Plus_Health()
+
+    public void Plus_Skin()
     {
-        maxHealth = maxHealth + 1;
-        PlayerPrefs.SetInt("maxHealth", maxHealth);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
-    }
-    public void Minus_Health()
-    {
-        maxHealth = maxHealth - 1;
-        PlayerPrefs.SetInt("maxHealth", maxHealth);
-        currency = currency - 1;
-        PlayerPrefs.SetInt("currency", currency);
+        if (currency >= 500)
+        {
+            number = random.Next(1, 4);
+            PlayerPrefs.SetInt("wybor", number);
+            currency = currency - 1;
+            PlayerPrefs.SetInt("currency", currency);
+        }
     }
     public void CloseMenu()
     {
