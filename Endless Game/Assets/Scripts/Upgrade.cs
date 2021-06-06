@@ -101,7 +101,7 @@ public class Upgrade : MonoBehaviour
     {
         if (currency >= 500)
         {
-            number = random.Next(1, 4);
+            number = random.Next(1, 7);
             PlayerPrefs.SetInt("wybor", number);
             currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
