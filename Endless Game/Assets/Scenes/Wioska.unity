@@ -4629,7 +4629,7 @@ MonoBehaviour:
     m_Bits: 256
   grounded: 0
   coins: 0
-  coinText: {fileID: 0}
+  coinText: {fileID: 755914007}
   jumpCount: 0
 --- !u!1 &972047667
 GameObject:

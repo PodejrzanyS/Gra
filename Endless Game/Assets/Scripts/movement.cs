@@ -84,7 +84,7 @@ public class movement : MonoBehaviour
             Debug.Log("Hit!");
         }
 
-            if (collision.tag == "SuperJump")
+        if (collision.tag == "SuperJump")
         {
             Level();
             PlayerPrefs.SetInt("level", lvl);
@@ -124,11 +124,11 @@ public class movement : MonoBehaviour
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
-        highscore = PlayerPrefs.GetInt("highscore");
-        currency = PlayerPrefs.GetInt("currency");
-        speed = PlayerPrefs.GetInt("speed");
-        lvl = PlayerPrefs.GetInt("level");
-        health = PlayerPrefs.GetInt("maxHealth");
+        highscore = PlayerPrefs.GetInt("highscore",0);
+        currency = PlayerPrefs.GetInt("currency",0);
+        speed = PlayerPrefs.GetInt("speed",4);
+        lvl = PlayerPrefs.GetInt("level",0);
+        health = PlayerPrefs.GetInt("maxHealth",100);
         PlayerPrefs.SetInt("zabici", 0);
         PlayerPrefs.SetInt("exp", 0);
         m = 200 * lvl;

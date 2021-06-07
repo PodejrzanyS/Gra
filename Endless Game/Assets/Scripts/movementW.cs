@@ -43,7 +43,7 @@ public class movementW : MonoBehaviour
     {
         rbBody = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        speed = PlayerPrefs.GetInt("speed");
+        speed = PlayerPrefs.GetInt("speed",4);
     }
 
     private void FixedUpdate()
