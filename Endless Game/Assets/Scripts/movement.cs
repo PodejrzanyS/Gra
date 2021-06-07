@@ -134,6 +134,18 @@ public class movement : MonoBehaviour
         m = 200 * lvl;
         curHealth = health;
         healthBar.SetMaxHealth(health);
+        
+    }
+
+    private void FixedUpdate()
+    {
+        grounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
+    }
+    
+
+    // Update is called once per frame
+    void Update()
+    {
         wybor = PlayerPrefs.GetInt("wybor");
         if (wybor == 1)
         {
@@ -163,17 +175,6 @@ public class movement : MonoBehaviour
         {
             sr.color = Color.clear;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        grounded = Physics2D.OverlapCircle(GroundCheck.position, groundCheckRadius, whatIsGround);
-    }
-    
-
-    // Update is called once per frame
-    void Update()
-    {
         zabici = PlayerPrefs.GetInt("zabici");
         exp = PlayerPrefs.GetInt("exp");
         if (health <= 0 && destroy == 0)

@@ -21,6 +21,7 @@ public class Upgrade : MonoBehaviour
     public GameObject UpgradeMenu;
     string wybor;
     int number;
+    SpriteRenderer sr;
     System.Random random = new System.Random();
 
     void Start()
@@ -38,7 +39,6 @@ public class Upgrade : MonoBehaviour
         coinsy.text = "Coinsy: " + currency;
         damagetxt.text = "Damage: " + damage;
         speedtxt.text = "Speed: " + speed;
-
         if (niszczenie == 0)
         {
             niszczenietxt.text = "Penetracja: " + niszczenie;
@@ -53,9 +53,9 @@ public class Upgrade : MonoBehaviour
 
     public void Plus_Damage()
     {
-        if (currency >= 10)
+        if (currency >= 1)
         {
-            damage = damage + 10;
+            damage = damage + 1;
             PlayerPrefs.SetInt("damage", damage);
             currency = currency - 10;
             PlayerPrefs.SetInt("currency", currency);
@@ -64,23 +64,23 @@ public class Upgrade : MonoBehaviour
 
     public void Plus_Speed()
     {
-        if (currency >= 20)
+        if (currency >= 1)
         {
             speed = speed + 1;
             PlayerPrefs.SetInt("speed", speed);
-            currency = currency - 20;
+            currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
         }
     }
     public void Plus_Strzalki()
     {
-        if (currency >= 30)
+        if (currency >= 1)
         {
             if (niszczenie == 0)
             {
                 niszczenie = niszczenie + 1;
                 PlayerPrefs.SetInt("niszczenie", niszczenie);
-                currency = currency - 30;
+                currency = currency - 1;
                 PlayerPrefs.SetInt("currency", currency);
             }
         }
@@ -88,20 +88,20 @@ public class Upgrade : MonoBehaviour
     }
     public void Plus_Health()
     {
-        if (currency >= 20)
+        if (currency >= 1)
         {
             maxHealth = maxHealth + 1;
             PlayerPrefs.SetInt("maxHealth", maxHealth);
-            currency = currency - 20;
+            currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);
         }
     }
 
     public void Plus_Skin()
     {
-        if (currency >= 500)
+        if (currency >= 1)
         {
-            number = random.Next(1, 7);
+            number = random.Next(1, 8);
             PlayerPrefs.SetInt("wybor", number);
             currency = currency - 1;
             PlayerPrefs.SetInt("currency", currency);

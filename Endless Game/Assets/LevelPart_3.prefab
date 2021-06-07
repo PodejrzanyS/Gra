@@ -766,8 +766,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 10, y: 0}
+  m_AnchoredPosition: {x: -5.03, y: 0}
+  m_SizeDelta: {x: -0.06777954, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4624081587621408635
 CanvasRenderer:
@@ -1530,7 +1530,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2826433752684520001
@@ -2272,7 +2272,7 @@ MonoBehaviour:
   Slider: {fileID: 2826433752684520001}
   Low: {r: 1, g: 0, b: 0.13757896, a: 1}
   High: {r: 0.15850139, g: 1, b: 0, a: 1}
-  Offset: {x: 0, y: 0, z: 0}
+  Offset: {x: 0, y: 0.5, z: 0}
 --- !u!1 &8765872212603994795
 GameObject:
   m_ObjectHideFlags: 0
