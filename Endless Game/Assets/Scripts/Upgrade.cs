@@ -28,7 +28,7 @@ public class Upgrade : MonoBehaviour
     {
         currency = PlayerPrefs.GetInt("currency",0);
         damage = PlayerPrefs.GetInt("damage", 40);
-        speed = PlayerPrefs.GetInt("speed", 1);
+        speed = PlayerPrefs.GetInt("speed", 4);
         niszczenie = PlayerPrefs.GetInt("niszczenie",0);
         maxHealth = PlayerPrefs.GetInt("maxHealth",100);
     }
