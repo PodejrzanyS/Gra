@@ -11,7 +11,8 @@ public class Enemy1 : MonoBehaviour
     int damage;
     int lvl;
     int coins;
-    int health=100;
+    public float health;
+    public float maxHealth = 100;
     int destroy = 0;
     int zabici;
     int exp;
@@ -20,7 +21,9 @@ public class Enemy1 : MonoBehaviour
     float fireRate;
     float nextFire;
     Animator myAnimator;
+    public HealthBarEnemy Healthbar;
     [System.Serializable]
+ 
 
 
 
@@ -49,9 +52,12 @@ public class Enemy1 : MonoBehaviour
     {
         myAnimator = GetComponent<Animator>();
         myAnimator.enabled = true;
-        PlayerPrefs.SetInt("damage",40);
+        PlayerPrefs.SetInt("damage", 40);
         stats.Init();
         damage = PlayerPrefs.GetInt("damage");
+        health = maxHealth;
+        Healthbar.SetHealth(health,maxHealth);
+ 
 
 
         fireRate = 2f; // szybkosc strzelania
@@ -79,7 +85,8 @@ public class Enemy1 : MonoBehaviour
     {
         if (collision.tag == "shoot")
         {
-             health = (health+coins) - damage;
+            health = (health + coins) - damage;
+            Healthbar.SetHealth(health, maxHealth);
             if (health <= 0 && destroy==0)
             {
                 zabici++;
